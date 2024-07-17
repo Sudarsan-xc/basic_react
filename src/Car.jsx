@@ -1,16 +1,24 @@
-const Car = ({ num1, num2 }) => {
-  //js logic
-  const sum = num1 + num1;
+import { useState } from "react";
+
+const Car = () => {
+  const [scorer, setScorer] = useState("");
+
   const shoot = (msg) => {
-    alert(msg);
+    alert(`${msg} by ${scorer}`);
   };
-  //html inside return tag
+
   return (
     <>
-      <h2>i am sudarsan {sum} </h2>
-      <input placeholder="Enter Scorer" />
-      <button onClick={() => shoot("Goal.....")}>Shoot the ball</button>
+      <h2>I am Sudarsan</h2>
+      <input
+        placeholder="Enter Scorer"
+        value={scorer}
+        onChange={(e) => setScorer(e.target.value)}
+      />
+      <button onClick={() => shoot("Goal...")}>Shoot the ball</button>
+      {scorer && <h3>Scorer: {scorer}</h3>}
     </>
   );
 };
+
 export default Car;
