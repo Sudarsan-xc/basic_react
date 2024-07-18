@@ -1,9 +1,9 @@
 import React from "react";
-import Contact from "./Contact";
+import StateHook from "./StateHook";
 const App = () => {
   return (
     <div>
-      <Contact />
+      <StateHook />
     </div>
   );
 };
