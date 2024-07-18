@@ -1,24 +1,13 @@
-import { useState } from "react";
-
-const Car = () => {
-  const [scorer, setScorer] = useState("");
-
-  const shoot = (msg) => {
-    alert(`${msg} by ${scorer}`);
-  };
-
+const Garage = () => {
+  const cars = ["Audi", "BMW", "Swift"];
   return (
     <>
-      <h2>I am Sudarsan</h2>
-      <input
-        placeholder="Enter Scorer"
-        value={scorer}
-        onChange={(e) => setScorer(e.target.value)}
-      />
-      <button onClick={() => shoot("Goal...")}>Shoot the ball</button>
-      {scorer && <h3>Scorer: {scorer}</h3>}
+      {cars.length > 0 &&
+        cars.map((car, index) => <Car key={index} brand={car} />)}
     </>
   );
 };
-
-export default Car;
+const Car = ({ brand }) => {
+  return <div>I an {brand}car</div>;
+};
+export default Garage;

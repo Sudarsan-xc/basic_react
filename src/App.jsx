@@ -1,10 +1,11 @@
-import Car from "./Car.jsx";
+import React from "react";
+import Contact from "./Contact";
 const App = () => {
   return (
-    <>
-      {/* /* <Car num1={2} num2={3} /> */}
-      <Car />
-    </>
+    <div>
+      <Contact />
+    </div>
   );
 };
+
 export default App;
